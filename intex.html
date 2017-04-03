@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html class="no-scroll">
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="-1">
+    <title>Behavior Controls example</title>
+
+    <link rel="stylesheet" href="lib/pip-webui-lib.css" />
+    <link rel="stylesheet" href="lib/pip-webui-behaviors.css" />
+    <link rel="stylesheet" href="styles.css" />
+
+    <script src="https://www.google.com/jsapi"></script>
+    <script src="lib/pip-webui-lib.js"></script>
+    <script src="lib/pip-webui-behaviors.js"></script>
+
+    <script src="index.js"></script>
+
+</head>
+
+
+<body ng-app="appBehaviors" ng-controller="pipSampleController as vm">
+    <md-card class="layout-column flex">
+        <md-card-content>
+            <h2 class="text-title">Shortcuts Example</h2>
+            <div class="help">
+                <ol class="shortcut-list">
+                    <li>Press <span class="shortcut-name">"shift+q"</span> in textarea1 for text saving.</li>
+                    <li>Press <span class="shortcut-name">"shift+alt+g"</span> for go to google.com.</li>
+                    <li>Press <span class="shortcut-name">"alt+s"</span> for Clear button focused.</li>
+                    <li>Press <span class="shortcut-name">"ctrl+m"</span> for show alert.</li>
+                    <li>Press <span class="shortcut-name">"alt+c"</span> for textarea2 cleared.</li>
+                </ol>
+            </div>
+
+            <div class="console">
+                {{result}}
+            </div>
+
+            <div class="content layout-column flex">
+                <h4>Textarea1</h4>
+                <textarea ng-model="text1" id="textarea_shortcut">
+                </textarea>
+
+                <h4>Textarea2</h4>
+                <textarea class="w-stretch" ng-model="text2" pip-shortcut pip-shortcut-action="keyEvent($event)" pip-shortcut-name="alt+c">
+                </textarea>
+
+                <div>
+                    <md-button id="clearedИutton" ng-click="onClear()">
+                        Clear
+                    </md-button>
+                </div>
+            </div>
+        </md-card-content>
+    </md-card>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+body {
+    padding: 8px
+}
+
+.shortcut-name {
+    background-color: rgba(0, 0, 0, 0.16); 
+    border-radius: 2px; 
+    padding: 4px
+}
+
+.content {
+    padding: 8px;
+}
+
+.shortcut-list li {
+    padding: 8px;
+}
+
+.console {
+    min-height: 24px;
+    color: red;
+}
